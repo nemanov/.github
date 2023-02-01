@@ -11,6 +11,14 @@ Consumers may redefine settings from the base configuration. In that case, the s
 
 To have settings as code a consumer repository must have a `settings.yml` file inside a `.github` folder.
 
+**Example of settings.yml with base settings only `./github/settings.yml`**:
+```
+# Repository settings are inherited from the base configuration taken from .github repository
+# You can redefine needed settings after `_extends` directive
+# Version of the base configuration: 1.0.0
+_extends: .github
+```
+
 **Example of settings.yml with redefined settings `./github/settings.yml`**:
 ```
 # Repository settings are inherited from the base configuration taken from .github repository
@@ -36,7 +44,7 @@ branches:
         required_approving_review_count: 1
 ```
 
-**Full settings lisst**:
+**Full settings list**:
 ```
 repository:
   # See https://docs.github.com/en/rest/reference/repos#update-a-repository for all available settings.
