@@ -1,0 +1,24 @@
+# Repository settings are inherited from the base configuration taken from .github repository
+# You can redefine needed settings after `_extends` directive
+# Version of the base configuration: 1.0.0
+_extends: .github
+
+repository:
+  # See https://docs.github.com/en/rest/reference/repos#update-a-repository for all available settings.
+
+  # Either `true` to enable issues for this repository, `false` to disable them.
+  has_issues: true
+
+# Either `true` to allow rebase-merging pull requests, or `false` to prevent
+  # rebase-merging.
+  allow_rebase_merge: true
+  
+branches:
+  - name: main
+    # https://docs.github.com/en/rest/reference/repos#update-branch-protection
+    # Branch Protection settings. Set to null to disable
+    protection:
+      # Required. Require at least one approving review on a pull request, before merging. Set to null to disable.
+      required_pull_request_reviews:
+        # The number of approvals required. (1-6)
+        required_approving_review_count: 3
